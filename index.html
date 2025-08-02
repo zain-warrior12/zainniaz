@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zain Warrior Gamer</title>
+
+  <!-- Google OAuth -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #111;
+      color: goldenrod;
+      padding: 1rem;
+    }
+
+    h1.ZAIN {
+      background: linear-gradient(to right, #000000, #333333);
+      color: gold;
+      text-align: center;
+      border: 2px solid rgb(223, 186, 23);
+      border-radius: 15px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px gold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .nav-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-left a {
+      color: white;
+      background: linear-gradient(145deg, #444, #222);
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .nav-left a:hover,
+    .nav-left a.active {
+      background: gold;
+      color: black;
+      border: 2px solid #fff;
+      transform: translateY(-3px);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    #profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: none;
+      cursor: pointer;
+    }
+
+    .btn-card {
+      display: flex;
+      align-items: center;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 10px auto;
+      max-width: 700px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1);
+    }
+
+    .btn-card:hover {
+      background: #333;
+      transform: scale(1.03);
+    }
+
+    .btn-card img {
+      width: 50px;
+      height: auto;
+      margin-left: auto;
+      border-radius: 10px;
+    }
+
+    .btn-text {
+      font-size: 1rem;
+      color: goldenrod;
+      flex: 1;
+    }
+
+    @media (max-width: 600px) {
+      h1.ZAIN {
+        font-size: 1.2rem;
+        padding: 0.7rem;
+      }
+
+      .nav-left a {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+      }
+
+      .btn-text {
+        font-size: 0.95rem;
+      }
+
+      .btn-card img {
+        width: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="ZAIN">ZAIN WARRIOR GAMER</h1>
+
+  <!-- ✅ NAVBAR with Login -->
+  <nav>
+    <div style="justify-content: center;
+    text-align: center;" class="nav-left">
+      <a href="#" class="active">Home</a>
+      <a href="#">Reviews</a>
+      <a href="#">Tips</a>
+      <a href="#">About</a>
+      <a href="games.html">Games</a>
+    </div>
+    <div class="nav-right">
+      <div id="g_id_onload"
+        data-client_id="105874237312-rc9v19lci4tfrjpphunhoekb9ff8nsbl.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse"
+        data-auto_prompt="false">
+      </div>
+
+      <div class="g_id_signin"
+        data-type="icon"
+        data-shape="circle"
+        data-theme="filled_black"
+        data-text="signin"
+        data-size="medium"
+        data-logo_alignment="center">
+      </div>
+
+      <img id="profile-pic" />
+    </div>
+  </nav>
+
+  <!-- ✅ Main Cards -->
+  <a href="https://www.youtube.com/@ZAINWARRIORGAMER">
+    <div class="btn-card">
+      <span class="btn-text">SUBSCRIBE MY YOUTUBE CHANNEL FROM HERE</span>
+      <img src="channels4_profile (1).jpg" alt="YouTube">
+    </div>
+  </a>
+
+  <a href="GAMES.HTML">
+    <div class="btn-card">
+      <span class="btn-text">DOWNLOAD GAMES AND APP FROM HERE</span>
+      <img src="channels4_profile (1).jpg" alt="Games">
+    </div>
+  </a>
+
+  <!-- ✅ Script -->
+  <script>
+    function handleCredentialResponse(response) {
+      const data = jwt_decode(response.credential);
+      const profilePic = document.getElementById('profile-pic');
+      profilePic.src = data.picture;
+      profilePic.style.display = "inline-block";
+
+      // Hide Signin Button
+      document.querySelector('.g_id_signin').style.display = "none";
+    }
+  </script>
+
+  <!-- ✅ JWT Decode Script -->
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+</body>
+</html>

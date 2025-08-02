@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Games - Zain Warrior Gamer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: goldenrod;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    h1 {
+      color: gold;
+      background: black;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gold;
+      margin-bottom: 2rem;
+      flex: 1;
+      text-align: center;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      width: 250px;
+      outline: none;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 1rem;
+    }
+
+    .game-tile {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1);
+    }
+
+    .game-tile:hover {
+      transform: translateY(-5px);
+      background-color: #333;
+    }
+
+    .game-tile img {
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .game-title {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: goldenrod;
+    }
+
+    .highlight {
+      background-color: yellow;
+      color: black;
+      padding: 0 5px;
+      border-radius: 5px;
+    }
+
+    .game-link {
+      display: inline-block;
+      background-color: goldenrod;
+      color: black;
+      padding: 8px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .game-link:hover {
+      background-color: white;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar input {
+        width: 90%;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      .game-title {
+        font-size: 1rem;
+      }
+
+      .game-link {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+    }
+    .search-bar {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  position: relative;
+}
+
+.search-bar input {
+  padding: 12px 40px 12px 15px;
+  font-size: 1rem;
+  border-radius: 15px;
+  border: none;
+  background: rgba(255, 215, 0, 0.1);
+  color: gold;
+  width: 250px;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 215, 0, 0.5);
+}
+
+.search-bar input:focus {
+  background-color: rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+  color: white;
+}
+
+.search-bar::before {
+  content: "🔍";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  pointer-events: none;
+  color: rgba(255, 215, 0, 0.6);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Header + Search -->
+  <header>
+    <h1>🎮 Zain Warrior Gamer - Game Zone</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search games..." onkeyup="searchGames()">
+    </div>
+  </header>
+
+  <!-- ✅ Game Grid -->
+  <div class="game-grid" id="gameGrid">
+    <!-- Game Tiles -->
+    <div class="game-tile">
+      <img src="lulu.png" alt="LuluBox">
+      <div class="game-title">Carrom Disc Pool Hack - LuluBox</div>
+      <a class="game-link" href="https://www.mediafire.com/file/jn46w0y0zgquplf/com.lulu.luluboxsuper-206.apk/file" target="_blank">Download Now</a>
+    </div>
+
+    <div class="game-tile">
+      <img src="los angles.png" alt="Los Angeles Crime">
+      <div class="game-title">Los Angeles Crimes Android</div>
+      <a class="game-link" href="https://www.mediafire.com/file/sbiqoejzsxclily/Los_Angeles_Crimes_v1.9.apk/file" target="_blank">Download Now</a>
+    </div>
+
+    <div class="game-tile">
+      <img src="granny.png" alt="Granny Resurgence">
+      <div class="game-title">Granny Resurgence Chapter 1</div>
+      <a class="game-link" href="https://www.mediafire.com/file/0y7u8gazld8vfp4/Granny_1_With_Grandpa_ZainWarrior/file" target="_blank">Download Now</a>
+    </div>
+
+    <div class="game-tile">
+      <img src="granny peppa pig edition.png" alt="Granny Peppa">
+      <div class="game-title">Granny Peppa Pig EDITION</div>
+      <a class="game-link" href="https://www.mediafire.com/file/8xwd9oli05m0sly/Granny_Peppa_Pig_Edition/file" target="_blank">Download Now</a>
+    </div>
+
+    <div class="game-tile">
+      <img src="granny the mall.png" alt="Granny The Mall">
+      <div class="game-title">Granny The Mall</div>
+      <a class="game-link" href="https://www.mediafire.com/file/tldzkyjlxb78bw1/Granny_The_Mall/file" target="_blank">Download Now</a>
+    </div>
+
+    <div class="game-tile">
+      <img src="picsart.png" alt="Picsart">
+      <div class="game-title">Picsart Free Premium Mod Apk</div>
+      <a class="game-link" href="https://www.mediafire.com/file/0y7u8gazld8vfp4/Granny_1_With_Grandpa_ZainWarrior/file" target="_blank">Download Now</a>
+    </div>
+  </div>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    function searchGames() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const tiles = document.querySelectorAll(".game-tile");
+
+      tiles.forEach(tile => {
+        const titleDiv = tile.querySelector(".game-title");
+        const text = titleDiv.textContent.toLowerCase();
+
+        if (text.includes(input)) {
+          tile.style.display = "block";
+
+          // Highlight matched word
+          const original = titleDiv.textContent;
+          const regex = new RegExp(`(${input})`, 'gi');
+          titleDiv.innerHTML = original.replace(regex, `<span class="highlight">$1</span>`);
+        } else {
+          tile.style.display = "none";
+          titleDiv.innerHTML = titleDiv.textContent; // Reset text
+        }
+
+        if (input === "") {
+          titleDiv.innerHTML = titleDiv.textContent; // Reset highlights when search is cleared
+          tile.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
